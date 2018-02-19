@@ -1,0 +1,109 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url("images/dust_scratches.png");
+    font-family: 'Roboto' , sans-serif;
+}
+.navbar-default{
+    margin-bottom: 0;
+    background: transparent;
+    border-bottom: none;
+}
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+    padding-top: 10px;
+    color: #c6c6c6;
+    opacity: 0.8;
+    font-family: 'Roboto', serif;
+}
+.navbar-brand>img {
+    width: 80px;
+    height: 60px;
+    opacity: 0.5;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #c6c6c6;
+    font-family: 'Roboto', sans-serif;
+}
+.navbar-right {
+    margin-right: 30px;
+}
+#movieSlider img {
+    max-height: 100vh;
+    width: 1500px;
+    margin: 0 auto    ;
+}
+.carousel-caption {
+    margin-bottom: 50px;
+}
+.page-header {
+    padding-bottom: 60px;
+    padding-top: 80px;
+    background-color: white;
+    margin-top: 0;
+}
+
+.thumbnail {
+    position: relative;
+}
+.thumbnail a>img, .thumbnail>img {
+    height: 285px;
+}
+.thumbnail img {
+    opacity: 1.0;
+}
+.thumbnail img:hover {
+    filter: brightness(50%);
+}
+.subtitle {
+    position: absolute;
+    z-index: 10;
+    top: 120px;
+    left: 50px;
+    color: #ffffff;
+    font-family: 'Roboto';
+    font-size: 24px;
+    display: none;
+}
+.thumbnail img:hover + .subtitle {
+    display: block;
+}
+.glyphicon {
+    color: gold;
+    font-size: 24px;
+}
+
+.thumbnail img:hover {
+    opacity: 1.0;
+}
+.aboutMe {
+    margin-top: 50px;
+    margin-right: 0;
+    margin-left: 0;
+    border-top: 1px solid black;
+    padding-top: 20px;
+    background-color: white;
+}
+
+.bio {
+    margin-bottom: 40px;
+}
+.aboutPic {
+    margin-bottom: 40px;
+}
+.info {
+    padding-bottom: 40px;
+}
+.signup {
+    border-top: 1px solid black;
+    padding-top: 80px;
+}
+footer {
+    background: #101010;
+    height: 100px;
+    margin-top: 40px;
+}
+footer h2 {
+    color: white;
+}
+

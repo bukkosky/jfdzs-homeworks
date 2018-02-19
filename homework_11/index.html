@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Moja lista filmów</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" id="myNav">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                <a class="navbar-brand" href="index.html">
+                        <img alt="Brand" src="images/20-20-logo.png" class="img-responsive">
+                    </a>
+                <a class="navbar-brand" href="index.html">
+                    <h4>Top 20 Filmów!</h4>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" id="movie-generator" onclick="movieStore.loadDemo()">
+                            <h5>Wczytaj Listę Filmów |</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html?action=editMovie">
+                            <h5>Edytuj Dane Filmu |</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html?action=removeMovie">
+                            <h5>Usuń Film |</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html?action=addMovie">
+                            <h5>Dodaj Nowy Film |</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="clear" onclick="movieStore.ClearThumbnails()">
+                            <h5>Wyczyść listę |</h5>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="movieSlider">
+
+        <div class="my-slider fade ">
+            <img src="images/pulpfictionmain.jpg" class="img-responsive" alt="Pulp Fiction" />
+            <div class="slider-text">Caption slider-text</div>
+        </div>
+
+        <div class="my-slider fade">
+            <img src="images/fgmain.jpg" class="img-responsive" alt="Forrest Gump" />
+            <div class="slider-text">Caption slider-text</div>
+        </div>
+
+        <div class="my-slider fade">
+            <img src="images/intouchablemain.jpg" class="img-responsive" alt="Intouchables" />
+            <div class="slider-text">Caption slider-text</div>
+        </div>
+
+        <div class="my-slider fade">
+            <img src="images/Snatch-1main.jpg" class="img-responsive" alt="Snatch" />
+            <div class="slider-text">Caption slider-text</div>
+        </div>
+
+        <div class="my-slider fade">
+            <img src="images/room_main.jpg" class="img-responsive" alt="Room" />
+            <div class="slider-text">Caption slider-text</div>
+        </div>
+
+        <div class="my-slider fade">
+            <img src="images/inceptionmain.jpg" class="img-responsive" alt="Inception" />
+            <div class="slider-text">Caption slider-text</div>
+        </div>
+
+        <div class="my-slider fade">
+            <img src="images/End-of-Watch_03main.jpg" class="img-responsive" alt="End of Watch" />
+            <div class="slider-text">Caption slider-text</div>
+        </div>
+
+        <div class="my-slider fade">
+            <img src="images/amx-main.jpg" class="img-responsive" alt="American Storry X" />
+            <div class="slider-text">Caption slider-text</div>
+        </div>
+
+        <div class="my-slider fade">
+            <img src="images/62888976-requiem-for-a-dream-wallpapers.jpg" class="img-responsive" alt="Requiem For Dream" />
+            <div class="slider-text">Caption Text</div>
+        </div>
+
+        <button id="left" onclick="nextPrevSlide(-1)">&#10094;</button>
+        <button id="right" onclick="nextPrevSlide(1)">&#10095;</button>
+
+    </div>
+
+    <div id="dots">
+        <span class="indicators" onclick=currentSlide(1)></span>
+        <span class="indicators" onclick=currentSlide(2)></span>
+        <span class="indicators" onclick=currentSlide(3)></span>
+        <span class="indicators" onclick=currentSlide(4)></span>
+        <span class="indicators" onclick=currentSlide(5)></span>
+        <span class="indicators" onclick=currentSlide(6)></span>
+        <span class="indicators" onclick=currentSlide(7)></span>
+        <span class="indicators" onclick=currentSlide(8)></span>
+        <span class="indicators" onclick=currentSlide(9)></span>
+    </div>
+
+    <div class="container page-header">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-4">
+                <h1>Top 20 Filmów <small>Lista subiektywna :)</small></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container main">
+        <div id="thumbnails-list" class="row"></div>
+        <div id="thumbnails-list-delete"></div>
+        <div id="thumbnails-list-add"></div>
+        <div id="thumbnails-list-edit"></div>
+
+    </div>
+
+    <div class="container-fluid aboutMe">
+        <div class="row bio">
+            <div class="col-xs-6 col-xs-offset-5">
+                <h1>About Me</h1>
+            </div>
+        </div>
+        <figure class="col-xs-6 col-xs-offset-3 aboutPic">
+            <img src="images/IMG_0184.JPG" class="img-responsive img-circle" alt="about me">
+        </figure>
+        <div class="row info">
+            <div class="col-xs-4 col-xs-offset-2">
+                <h4>Pellentesque viverra</h4>
+                <p>dapibus arcu, eu laoreet est sollicitudin at. Nulla sollicitudin nunc eget pellentesque placerat. Vestibulum dui sapien, semper a placerat id, consequat ac dui. Nulla sollicitudin nunc eget pellentesque placerat. Vestibulum dui sapien, semper a placerat id, consequat ac dui. Pellentesque vehicula velit ligula</p>
+            </div>
+            <div class="col-xs-4">
+                <h4>Nulla facilisi</h4>
+                <p> Integer pulvinar eget augue eu tristique. Donec tempor ligula nec quam rutrum, quis suscipit neque feugiat. Morbi accumsan gravida mauris, vitae gravida mauris pretium quis.Suspendisse dictum imperdiet consectetur. Curabitur sit amet eros finibus, faucibus urna vel, dignissim felis. Etiam non orci arcu. Praesent sed orci quam. </p>
+            </div>
+        </div>
+    </div>
+
+    <section class="container signup">
+        <div class="row">
+            <div class="col-xs-9 col-xs-offset-3">
+                <h1>Badź na bieżąco</h1>
+            </div>
+        </div>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="inputEmail" class="col-sm-3 control-label">Email:</label>
+                <div class="col-sm-9">
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="firstName" class="col-sm-3 control-label">First Name:</label>
+                <div class="col-sm-5">
+                    <input type="text" id="firstName" class="form-control" placeholder="First Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Date of Birth:</label>
+                <div class="col-sm-3">
+                    <select class="form-control">
+                            <option>Date</option>
+                        </select>
+                </div>
+                <div class="col-sm-3">
+                    <select class="form-control">
+                            <option>Month</option>
+                        </select>
+                </div>
+                <div class="col-sm-3">
+                    <select class="form-control">
+                            <option>Year</option>
+                        </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Gender:</label>
+                <div class="col-sm-9">
+                    <div class="radio">
+                        <label>
+                                <input type="radio" name="genderRadios" value="male"> Male
+                            </label>
+                        <label>
+                                <input type="radio" name="genderRadios" value="female"> Female
+                            </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-9 col-sm-offset-3">
+                    <div class="checkbox">
+                        <label>
+                                <input type="checkbox" value="news"> Send me latest news and updates.
+                            </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-9 col-sm-offset-3">
+                    <input class="btn btn-success" type="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6 col-xs-offset-5">
+                    <h2>Copyright 2017</h2>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script/store.js"></script>
+    <script src="script/movieViewList.js"></script>  
+    <script src="script/main.js"></script>
+    <script src="script/movieRemoveList.js"></script>  
+    <script src="script/movieCreateList.js"></script>  
+    <script src="script/movieEditList.js"></script>
+    <script src="script/app.js"></script>
+
+</body>
+
+</html>

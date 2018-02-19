@@ -1,0 +1,200 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto' , sans-serif;
+}
+.navbar-default{
+    margin-bottom: 0;
+    background: transparent;
+    border-bottom: none;
+}
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+    padding-top: 10px;
+    color: #c6c6c6;
+    opacity: 0.8;
+    font-family: 'Roboto', serif;
+}
+.navbar-brand>img {
+    width: 80px;
+    height: 60px;
+    opacity: 0.5;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #c6c6c6;
+    font-family: 'Roboto', sans-serif;
+}
+.navbar-right {
+    margin-right: 30px;
+}
+
+#movieSlider img {
+    max-height: 90vh;
+    width: 100vw;
+    margin: 0 auto    ;
+}
+
+.mySlides {
+    display: none;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 3.0s; 
+  transition: 0.4s ease;
+}
+
+@keyframes fade {
+  from {opacity: 0.6;}
+  to {opacity: 1;}
+}
+
+
+#left, #right {
+      background-color: #333;
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 50%;
+}
+
+#right {
+      right: 0;
+      border-radius: 50%;
+}
+
+#left:hover, #right:hover {
+  background-color: rgba(0,0,0,0.8);
+
+}
+
+.slider-text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+#dots {
+    text-align: center;
+}
+
+.indicators {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  margin-top: 20px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+
+    
+}
+
+.active, .indicators:hover {
+  background-color: #333;
+}
+
+
+.page-header {
+    padding-bottom: 60px;
+    padding-top: 80px;
+    background-color: white;
+    margin-top: 0;
+}
+
+.movieList {
+    position: relative;
+    display: block;
+}
+
+.movieList a>img, .movieList>img {
+    height: 285px;
+}
+
+
+.movieList img {
+    opacity: 1.0;
+}
+.movieList img:hover {
+    filter: brightness(50%);
+}
+.subtitle {
+    position: absolute;
+    z-index: 10;
+    top: 120px;
+    left: 50px;
+    color: #ffffff;
+    font-family: 'Roboto';
+    font-size: 24px;
+    display: none;
+}
+.movieList img:hover + .subtitle {
+    display: block;
+}
+.glyphicon {
+    color: gold;
+    font-size: 24px;
+}
+
+.movieList img:hover {
+    opacity: 1.0;
+}
+.aboutMe {
+    margin-top: 50px;
+    margin-right: 0;
+    margin-left: 0;
+    border-top: 1px solid black;
+    padding-top: 20px;
+    background-color: white;
+}
+
+.bio {
+    margin-bottom: 40px;
+}
+.aboutPic {
+    margin-bottom: 40px;
+}
+.info {
+    padding-bottom: 40px;
+}
+.signup {
+    border-top: 1px solid black;
+    padding-top: 80px;
+}
+footer {
+    background: #101010;
+    height: 100px;
+    margin-top: 40px;
+}
+footer h2 {
+    color: white;
+}
+
+#clear, #movie-generator {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+#clear {
+    margin-left: 100px;
+}
+
+.bestMovie {
+    border: 5px solid green;
+}
+
+.worstMovie {
+    border: 5px solid red;
+}
